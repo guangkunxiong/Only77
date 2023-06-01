@@ -6,15 +6,15 @@ class AppTheme {
   static const Color notWhite = Color(0xFFEDF0F2);
   static const Color nearlyWhite = Color(0xFFFEFEFE);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color nearlyBlack = Color(0xFF213333);
-  static const Color grey = Color(0xFF3A5160);
-  static const Color darkGrey = Color(0xFF313A44);
+  static const Color nearlyBlack = Color(0xFF1F1F1F);
+  static const Color grey = Color(0xFFB9B9B9);
+  static const Color darkGrey = Color(0xFF1C1C1C);
 
-  static const Color darkText = Color(0xFF253840);
-  static const Color darkerText = Color(0xFF17262A);
-  static const Color lightText = Color(0xFF4A6572);
-  static const Color deactivatedText = Color(0xFF767676);
-  static const Color dismissibleBackground = Color(0xFF364A54);
+  static const Color darkText = Color(0xFFD9D8D8);
+  static const Color darkerText = Color(0xFFB9B9B9);
+  static const Color lightText = Color(0xFF0A0A0A);
+  static const Color deactivatedText = Color(0xFF030303);
+  static const Color dismissibleBackground = Color(0xFF22282F);
   static const Color chipBackground = Color(0xFFEEF1F3);
   static const Color spacer = Color(0xFFF2F2F2);
   static const String fontName = 'WorkSans';

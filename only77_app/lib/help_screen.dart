@@ -27,33 +27,17 @@ class _HelpScreenState extends State<HelpScreen> {
               isLightMode ? AppTheme.nearlyWhite : AppTheme.nearlyBlack,
           body: Column(
             children: <Widget>[
-              // Container(
-              //   padding: EdgeInsets.only(
-              //       top: MediaQuery.of(context).padding.top,
-              //       left: 16,
-              //       right: 16),
-              //   child: Image.asset('assets/images/helpImage.png'),
-              // ),
               Container(
                 padding: const EdgeInsets.only(top: 100),
+                alignment: Alignment.center,
                 child: Text(
-                  '有问题学面对面沟通 嘻嘻',
+                  '有问题面对面沟通 嘻嘻',
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: isLightMode ? Colors.black : Colors.white),
                 ),
               ),
-              // Container(
-              //   padding: const EdgeInsets.only(top: 16),
-              //   child: Text(
-              //     '嘻嘻',
-              //     textAlign: TextAlign.center,
-              //     style: TextStyle(
-              //         fontSize: 16,
-              //         color: isLightMode ? Colors.black : Colors.white),
-              //   ),
-              // ),
             ],
           ),
         ),

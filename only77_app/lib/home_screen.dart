@@ -153,13 +153,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       Text("悄悄话   ",
                           style: TextStyle(
                             fontSize: 17.0,
-                            color: isLightMode ? Colors.grey : Colors.white,
+                            color: isLightMode ? Colors.grey : Colors.grey,
                             fontWeight: FontWeight.w600,
                           )),
                       Text("纪念日   ",
                           style: TextStyle(
                             fontSize: 17.0,
-                            color: isLightMode ? Colors.grey : Colors.white,
+                            color: isLightMode ? Colors.grey : Colors.grey,
                             fontWeight: FontWeight.w600,
                           )),
                     ],
