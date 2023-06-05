@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Only77API.EntityFrameworkCore;
 
-public class IdentityDbContext: IdentityDbContext<IdentityUser>
+public class ApplicationIdentityDbContext: IdentityDbContext<IdentityUser>
 {
-    public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
+    public ApplicationIdentityDbContext(DbContextOptions<ApplicationIdentityDbContext> options) : base(options)
     {
         
     }
