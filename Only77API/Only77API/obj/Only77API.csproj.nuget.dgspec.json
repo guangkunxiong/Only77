@@ -68,6 +68,18 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Serilog.Aspnetcore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.sinks.async": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Serilog.sinks.file": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

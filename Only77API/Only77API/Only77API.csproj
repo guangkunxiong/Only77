@@ -17,6 +17,9 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+        <PackageReference Include="Serilog.Aspnetcore" Version="7.0.0" />
+        <PackageReference Include="Serilog.sinks.async" Version="1.5.0" />
+        <PackageReference Include="Serilog.sinks.file" Version="5.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 

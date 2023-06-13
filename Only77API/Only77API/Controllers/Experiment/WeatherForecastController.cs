@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Only77API.IService;
+using Serilog;
 
 namespace Only77API.Controllers;
 
@@ -33,6 +34,7 @@ public class WeatherForecastController : ControllerBase
         _scopedDemo.DoSomething();
         _singletonDemo.DoSomething();
         
+        Log.Debug("Test");
         
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

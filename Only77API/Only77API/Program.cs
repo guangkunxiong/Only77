@@ -4,9 +4,30 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Namespace;
 using Only77API.EntityFrameworkCore;
 using Only77API.IService;
 using Only77API.Service;
+using Serilog;
+using Serilog.Events;
+
+static string LogFilePath(string LogEvent) => $@"Logs\{LogEvent}\log.log";
+string SerilogOutputTemplate = "{NewLine}{NewLine}Date:{Timestamp:yyyy-MM-dd HH:mm:ss.fff} LogLevel：{Level}{NewLine}{Message}{NewLine}" + new string('-', 50) + "{NewLine}";
+Log.Logger = new LoggerConfiguration()
+                // 将配置传给 Serilog 的提供程序 
+                //.ReadFrom.Configuration(Configuration)
+                .Enrich.With(new DateTimeNowEnricher())
+                .MinimumLevel.Debug()//最小记录级别
+                .Enrich.FromLogContext()//记录相关上下文信息 
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)//对其他日志进行重写,除此之外,目前框架只有微软自带的日志组件
+                //.WriteTo.File() 
+                .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Debug).WriteTo.File(LogFilePath("Debug"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
+                .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Information).WriteTo.File(LogFilePath("Information"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
+                .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Warning).WriteTo.File(LogFilePath("Warning"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
+                .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Error).WriteTo.File(LogFilePath("Error"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
+                .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Fatal).WriteTo.File(LogFilePath("Fatal"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
+                .CreateLogger();
+
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -16,6 +37,8 @@ builder.Services.AddQueuePolicy(option =>
     option.MaxConcurrentRequests = 2;
     option.RequestQueueLimit = 3;
 });
+
+builder.Services.AddSerilog(dispose: true);
 
 builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
@@ -85,8 +108,10 @@ app.UseAuthentication();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseSerilogRequestLogging();
+
 app.Run();
+
