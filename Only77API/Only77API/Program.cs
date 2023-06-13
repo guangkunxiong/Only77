@@ -1,8 +1,12 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Namespace;
 using Only77API.EntityFrameworkCore;
@@ -12,15 +16,12 @@ using Serilog;
 using Serilog.Events;
 
 static string LogFilePath(string LogEvent) => $@"Logs\{LogEvent}\log.log";
-string SerilogOutputTemplate = "{NewLine}{NewLine}Date:{Timestamp:yyyy-MM-dd HH:mm:ss.fff} LogLevel：{Level}{NewLine}{Message}{NewLine}" + new string('-', 50) + "{NewLine}";
+var SerilogOutputTemplate = "{NewLine}{NewLine}Date:{Timestamp:yyyy-MM-dd HH:mm:ss.fff} LogLevel：{Level}{NewLine}{Message}{NewLine}" + new string('-', 50) + "{NewLine}";
 Log.Logger = new LoggerConfiguration()
-                // 将配置传给 Serilog 的提供程序 
-                //.ReadFrom.Configuration(Configuration)
                 .Enrich.With(new DateTimeNowEnricher())
                 .MinimumLevel.Debug()//最小记录级别
                 .Enrich.FromLogContext()//记录相关上下文信息 
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)//对其他日志进行重写,除此之外,目前框架只有微软自带的日志组件
-                //.WriteTo.File() 
                 .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Debug).WriteTo.File(LogFilePath("Debug"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
                 .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Information).WriteTo.File(LogFilePath("Information"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))
                 .WriteTo.Logger(lg => lg.Filter.ByIncludingOnly(p => p.Level == LogEventLevel.Warning).WriteTo.File(LogFilePath("Warning"), rollingInterval: RollingInterval.Day, outputTemplate: SerilogOutputTemplate))

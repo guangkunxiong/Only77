@@ -1,3 +1,5 @@
+using System;
+
 namespace Only77API.Service;
 
 public class DisposableBase:IDisposable
