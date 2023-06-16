@@ -1,0 +1,90 @@
+
+
+Date:2023-06-13 10:21:27.268 LogLevel：Information
+User profile is available. Using '"/Users/yukunxie/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+--------------------------------------------------
+
+
+Date:2023-06-13 10:21:27.419 LogLevel：Information
+Now listening on: "http://localhost:5121"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:21:27.420 LogLevel：Information
+Application started. Press Ctrl+C to shut down.
+--------------------------------------------------
+
+
+Date:2023-06-13 10:21:27.420 LogLevel：Information
+Hosting environment: "Development"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:21:27.420 LogLevel：Information
+Content root path: "/Users/yukunxie/Code/Git/Only77/Only77API/Only77API"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:23:48.304 LogLevel：Information
+User profile is available. Using '"/Users/yukunxie/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest.
+--------------------------------------------------
+
+
+Date:2023-06-13 10:23:48.457 LogLevel：Information
+Now listening on: "http://localhost:5121"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:23:48.457 LogLevel：Information
+Application started. Press Ctrl+C to shut down.
+--------------------------------------------------
+
+
+Date:2023-06-13 10:23:48.457 LogLevel：Information
+Hosting environment: "Development"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:23:48.457 LogLevel：Information
+Content root path: "/Users/yukunxie/Code/Git/Only77/Only77API/Only77API"
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.709 LogLevel：Information
+Request starting HTTP/1.1 GET http://localhost:5121/api/WeatherForecast/Get - -
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.768 LogLevel：Information
+Executing endpoint '"Only77API.Controllers.WeatherForecastController.Get (Only77API)"'
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.773 LogLevel：Information
+Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Only77API.WeatherForecast] Get()" on controller "Only77API.Controllers.WeatherForecastController" ("Only77API").
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.783 LogLevel：Information
+Executing "ObjectResult", writing value of type '"Only77API.WeatherForecast[]"'.
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.805 LogLevel：Information
+Executed action "Only77API.Controllers.WeatherForecastController.Get (Only77API)" in 30.2771ms
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.805 LogLevel：Information
+Executed endpoint '"Only77API.Controllers.WeatherForecastController.Get (Only77API)"'
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.806 LogLevel：Information
+HTTP "GET" "/api/WeatherForecast/Get" responded 200 in 38.3329 ms
+--------------------------------------------------
+
+
+Date:2023-06-13 10:27:59.807 LogLevel：Information
+Request finished HTTP/1.1 GET http://localhost:5121/api/WeatherForecast/Get - - - 200 - application/json;+charset=utf-8 99.7636ms
+--------------------------------------------------

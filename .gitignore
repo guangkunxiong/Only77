@@ -1,2 +1,4 @@
-
-LeanEnglishAPI/.idea
+*/.idea/*
+*/vscode/*
+Only77API/Only77API/bin/*
+Only77API/Only77API/obj/*

@@ -32,7 +32,6 @@ Log.Logger = new LoggerConfiguration()
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
-
 builder.Services.AddQueuePolicy(option =>
 {
     option.MaxConcurrentRequests = 2;
