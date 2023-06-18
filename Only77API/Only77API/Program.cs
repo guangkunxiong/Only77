@@ -8,8 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using Namespace;
 using Only77API.EntityFrameworkCore;
+using Only77API.Extensions;
 using Only77API.IService;
 using Only77API.Service;
 using Serilog;
@@ -18,7 +18,7 @@ using Serilog.Events;
 static string LogFilePath(string LogEvent) => $@"Logs\{LogEvent}\log.log";
 var SerilogOutputTemplate = "{NewLine}{NewLine}Date:{Timestamp:yyyy-MM-dd HH:mm:ss.fff} LogLevel：{Level}{NewLine}{Message}{NewLine}" + new string('-', 50) + "{NewLine}";
 Log.Logger = new LoggerConfiguration()
-                .Enrich.With(new DateTimeNowEnricher())
+                .Enrich.With(new DateTimeNowEnrich())
                 .MinimumLevel.Debug()//最小记录级别
                 .Enrich.FromLogContext()//记录相关上下文信息 
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)//对其他日志进行重写,除此之外,目前框架只有微软自带的日志组件

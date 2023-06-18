@@ -1,17 +1,15 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using Only77API.IService;
 
-namespace Only77API.Controllers;
+namespace Only77API.Controllers.Experiment;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public class IOCDomeController : ControllerBase
+public class IocDomeController : ControllerBase
 {
     private readonly IServiceProvider _serviceProvider;
 
-    public IOCDomeController(IServiceProvider serviceProvider)
+    public IocDomeController(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
     }
