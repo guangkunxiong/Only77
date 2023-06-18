@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct WhispersView: View {
-    var body: some View {
-        Text("悄悄话")
+    var body: some View{
+        
+       Text("12")
+    
+            
     }
 }
 

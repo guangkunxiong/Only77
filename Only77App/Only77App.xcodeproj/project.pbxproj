@@ -18,6 +18,8 @@
 		646E6E952A3C226100910C34 /* WhispersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E6E942A3C226100910C34 /* WhispersView.swift */; };
 		646E6E972A3C22CE00910C34 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E6E962A3C22CE00910C34 /* PlanView.swift */; };
 		646E6E992A3C22FD00910C34 /* MemorialDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E6E982A3C22FD00910C34 /* MemorialDayView.swift */; };
+		646E6E9D2A3C32D200910C34 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 646E6E9C2A3C32D200910C34 /* Moya */; };
+		6496248B2A3D3CD500C49056 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6496248A2A3D3CD500C49056 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		646E6E942A3C226100910C34 /* WhispersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhispersView.swift; sourceTree = "<group>"; };
 		646E6E962A3C22CE00910C34 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		646E6E982A3C22FD00910C34 /* MemorialDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorialDayView.swift; sourceTree = "<group>"; };
+		6496248A2A3D3CD500C49056 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				646E6E9D2A3C32D200910C34 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +124,7 @@
 				6453A4782A3C01A40064C8C3 /* Assets.xcassets */,
 				6453A47A2A3C01A40064C8C3 /* Preview Content */,
 				3E2626ED21B388DFAA58E6D1 /* Views */,
+				6496248A2A3D3CD500C49056 /* Theme.swift */,
 			);
 			path = Only77App;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			);
 			name = Only77App;
 			packageProductDependencies = (
+				646E6E9C2A3C32D200910C34 /* Moya */,
 			);
 			productName = Only77App;
 			productReference = 6453A4712A3C01A30064C8C3 /* Only77App.app */;
@@ -247,6 +253,7 @@
 			);
 			mainGroup = 6453A4682A3C01A30064C8C3;
 			packageReferences = (
+				646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 6453A4722A3C01A30064C8C3 /* Products */;
 			projectDirPath = "";
@@ -296,6 +303,7 @@
 				3E2629493A6F7B2365131BDD /* Only77AppApp.swift in Sources */,
 				646E6E932A3C21E000910C34 /* CouplesAlbumView.swift in Sources */,
 				646E6E972A3C22CE00910C34 /* PlanView.swift in Sources */,
+				6496248B2A3D3CD500C49056 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		646E6E9C2A3C32D200910C34 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6453A4692A3C01A30064C8C3 /* Project object */;
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
 
     @State private var selectedTabIndex = 0
@@ -17,26 +18,26 @@ struct ContentView: View {
                      Button(action: {
                          selectedTabIndex = 0
                      }) {
-                         Text("情侣相册")
+                         Text("情侣相册").foregroundColor(selectedTabIndex==0 ? .accent:.tint).bold()
                      }
             
                      Button(action: {
                          selectedTabIndex = 1
                      }) {
-                         Text("悄悄话")
+                         Text("悄悄话").foregroundColor(selectedTabIndex==1 ? .accent:.tint).bold()
                      }
                      Button(action: {
                          selectedTabIndex = 2
                      }) {
-                         Text("计划")
+                         Text("计划").foregroundColor(selectedTabIndex==2 ? .accent:.tint).bold()
                      }
                      Button(action: {
                          selectedTabIndex = 3
                      }) {
-                         Text("纪念日")
+                         Text("纪念日").foregroundColor(selectedTabIndex==3 ? .accent:.tint).bold()
                      }
                  }
-                 .frame(height: 40)
+                 .frame(height:40).font(.title3)
                  
             TabView(selection: $selectedTabIndex) {
                        CouplesAlbumView()
