@@ -1,4 +1,5 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.InteropServices.JavaScript;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +10,7 @@ namespace Only77API.Controllers;
 
 [ApiController]
 [Route("api/[controller]/[action]")]
-public class AuthenticateController : ControllerBase
+public class AuthenticateController : BaseController
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
@@ -55,7 +56,7 @@ public class AuthenticateController : ControllerBase
     {
         var userExists = await _userManager.FindByNameAsync(model.Username);
         if (userExists != null)
-            return StatusCode(StatusCodes.Status500InternalServerError, "已经存在该用户");
+            return Fail(StatusCodes.Status500InternalServerError, "已经存在该用户");
 
         IdentityUser user = new()
         {
@@ -64,7 +65,7 @@ public class AuthenticateController : ControllerBase
             UserName = model.Username
         };
         var result = await _userManager.CreateAsync(user, model.Password);
-        return !result.Succeeded ? StatusCode(StatusCodes.Status500InternalServerError, result.Errors) : Ok("Success");
+        return !result.Succeeded ? Fail(StatusCodes.Status500InternalServerError, result.Errors.First().Description) : Success("Success");
     }
 
     [HttpPost]
@@ -73,7 +74,7 @@ public class AuthenticateController : ControllerBase
     {
         var userExists = await _userManager.FindByNameAsync(model.Username);
         if (userExists != null)
-            return StatusCode(StatusCodes.Status500InternalServerError, "");
+            return Fail(StatusCodes.Status500InternalServerError, "");
 
         IdentityUser user = new()
         {
@@ -101,7 +102,7 @@ public class AuthenticateController : ControllerBase
             await _userManager.AddToRoleAsync(user, UserRoles.User);
         }
 
-        return Ok("");
+        return Success();
     }
 
     private JwtSecurityToken GetToken(IEnumerable<Claim> authClaims)
