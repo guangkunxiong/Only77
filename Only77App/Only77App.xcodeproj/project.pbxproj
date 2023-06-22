@@ -19,6 +19,8 @@
 		646E6E972A3C22CE00910C34 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E6E962A3C22CE00910C34 /* PlanView.swift */; };
 		646E6E992A3C22FD00910C34 /* MemorialDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E6E982A3C22FD00910C34 /* MemorialDayView.swift */; };
 		646E6E9D2A3C32D200910C34 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 646E6E9C2A3C32D200910C34 /* Moya */; };
+		648C06AD2A3F3E1300FC6D5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C06AC2A3F3E1300FC6D5E /* LoginView.swift */; };
+		648C06B02A3F401800FC6D5E /* CircleMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 648C06AF2A3F401800FC6D5E /* CircleMenu */; };
 		6496248B2A3D3CD500C49056 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6496248A2A3D3CD500C49056 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,7 @@
 		646E6E942A3C226100910C34 /* WhispersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhispersView.swift; sourceTree = "<group>"; };
 		646E6E962A3C22CE00910C34 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		646E6E982A3C22FD00910C34 /* MemorialDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorialDayView.swift; sourceTree = "<group>"; };
+		648C06AC2A3F3E1300FC6D5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6496248A2A3D3CD500C49056 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				646E6E9D2A3C32D200910C34 /* Moya in Frameworks */,
+				648C06B02A3F401800FC6D5E /* CircleMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +96,7 @@
 				646E6E942A3C226100910C34 /* WhispersView.swift */,
 				646E6E962A3C22CE00910C34 /* PlanView.swift */,
 				646E6E982A3C22FD00910C34 /* MemorialDayView.swift */,
+				648C06AC2A3F3E1300FC6D5E /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			name = Only77App;
 			packageProductDependencies = (
 				646E6E9C2A3C32D200910C34 /* Moya */,
+				648C06AF2A3F401800FC6D5E /* CircleMenu */,
 			);
 			productName = Only77App;
 			productReference = 6453A4712A3C01A30064C8C3 /* Only77App.app */;
@@ -254,6 +260,7 @@
 			mainGroup = 6453A4682A3C01A30064C8C3;
 			packageReferences = (
 				646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */,
+				648C06AE2A3F401800FC6D5E /* XCRemoteSwiftPackageReference "circle-menu" */,
 			);
 			productRefGroup = 6453A4722A3C01A30064C8C3 /* Products */;
 			projectDirPath = "";
@@ -304,6 +311,7 @@
 				646E6E932A3C21E000910C34 /* CouplesAlbumView.swift in Sources */,
 				646E6E972A3C22CE00910C34 /* PlanView.swift in Sources */,
 				6496248B2A3D3CD500C49056 /* Theme.swift in Sources */,
+				648C06AD2A3F3E1300FC6D5E /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +646,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		648C06AE2A3F401800FC6D5E /* XCRemoteSwiftPackageReference "circle-menu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ramotion/circle-menu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -645,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		648C06AF2A3F401800FC6D5E /* CircleMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 648C06AE2A3F401800FC6D5E /* XCRemoteSwiftPackageReference "circle-menu" */;
+			productName = CircleMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
