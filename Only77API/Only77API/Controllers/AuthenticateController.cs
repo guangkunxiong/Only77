@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace Only77API.Controllers;
 
 [ApiController]
-[Route("api/[controller]/[action]")]
+[Route("api/[controller]")]
 public class AuthenticateController : BaseController
 {
     private readonly UserManager<IdentityUser> _userManager;
@@ -66,43 +66,6 @@ public class AuthenticateController : BaseController
         };
         var result = await _userManager.CreateAsync(user, model.Password);
         return !result.Succeeded ? Fail(StatusCodes.Status500InternalServerError, result.Errors.First().Description) : Success("Success");
-    }
-
-    [HttpPost]
-    [Route("register-admin")]
-    public async Task<IActionResult> RegisterAdmin([FromBody] Register model)
-    {
-        var userExists = await _userManager.FindByNameAsync(model.Username);
-        if (userExists != null)
-            return Fail(StatusCodes.Status500InternalServerError, "");
-
-        IdentityUser user = new()
-        {
-            Email = model.Email,
-            SecurityStamp = Guid.NewGuid().ToString(),
-            UserName = model.Username
-        };
-        var result = await _userManager.CreateAsync(user, model.Password);
-        if (!result.Succeeded)
-            return StatusCode(StatusCodes.Status500InternalServerError, "");
-
-        if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
-            await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-
-        if (!await _roleManager.RoleExistsAsync(UserRoles.User))
-            await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
-
-        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
-        {
-            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
-        }
-
-        if (await _roleManager.RoleExistsAsync(UserRoles.User))
-        {
-            await _userManager.AddToRoleAsync(user, UserRoles.User);
-        }
-
-        return Success();
     }
 
     private JwtSecurityToken GetToken(IEnumerable<Claim> authClaims)
