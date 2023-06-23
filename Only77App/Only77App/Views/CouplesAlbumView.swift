@@ -39,8 +39,8 @@ struct CouplesAlbumView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    SectorButtonLayout( radius: 90, buttonSize: 50, centerButtonSize: 60, showView2:$showView2)
-                        .padding()
+                    SectorButtonLayout( showView2:$showView2)
+                        .padding(30)
                 }
             }
         }
@@ -54,7 +54,7 @@ struct FullScreenImageView: View {
 
     var body: some View {
         ZStack {
-            Color.black
+           // Color.black
             Image(imgName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -99,18 +99,19 @@ struct ImgGridView:View{
                Image(item)
                     .resizable()
                     .scaledToFill()
-                    .onTapGesture {
-                        selectedImage = item
-                        isPresented.toggle()
-                    }
                     .fullScreenCover(isPresented: $isPresented) {
                         FullScreenImageView(imgName: selectedImage, isPresented: $isPresented)
                     }
+                
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .frame(width: 120,height: 120)
                     .cornerRadius(2)
                     .shadow(color: .gray, radius: 5, x: 0, y: 0)
                     .padding(2)
+                    .onTapGesture {
+                        selectedImage = item
+                        isPresented.toggle()
+                    }
                 
             }
         }
@@ -122,56 +123,70 @@ struct ImgGridView:View{
 
 struct SectorButtonLayout: View {
     
-    let radius: CGFloat // 圆的半径
-    let buttonSize: CGFloat // 按钮的尺寸
-    let centerButtonSize: CGFloat // 圆心按钮的尺寸
-    let iconArray=Array(arrayLiteral: "viewfinder.circle.fill","plus.circle.fill","flag.checkered.circle.fill")
     @Binding var showView2: Bool
-
-    @State private var isShow=false
     
-    func handleButtonTap(title: Int) {
-        switch(title){
-            case 0:
-            showView2 = !showView2
-            case 1:
-                print("1")
-            case 2:
-                print("2")
-            default:
-                isShow=false;
+        func handleButtonTap(title: Int) {
+            switch(title){
+                case 0:
+                showView2 = !showView2
+                case 1:
+                    print("1")
+                case 2:
+                    print("2")
+                default:
+                    print("2")
+
+            }
         }
-        isShow=false;
-    }
+    
+    @State private var isExpanded = false
+    
+     let iconArray=Array(arrayLiteral: "viewfinder.circle.fill","plus.circle.fill","flag.checkered.circle.fill")
+    
     
     var body: some View {
         ZStack {
-            
-            ForEach(0..<3) { index in
-                let angle = 96.0 / CGFloat(3 - 1) * CGFloat(index) + 179.0
-                let radians = angle * .pi / 180.0
-                let x = radius * cos(radians)
-                let y = radius * sin(radians)
-                
-                if isShow{
-                    Button(action: {
-                        handleButtonTap(title: index)
-                    }) {
-                        Image(systemName: iconArray[index])
-                                     .resizable()
-                                     .foregroundColor(.accent)
-                    }.id(index).frame(width: 55, height: 55).position(x: x + radius, y: y + radius)
-                }
-            }
-            
+            // 主按钮
             Button(action: {
-               isShow = !isShow
+                withAnimation {
+                    self.isExpanded.toggle()
+                }
             }) {
                 Image(systemName: "pencil.circle.fill")
-                                .resizable()
-                                .foregroundColor(.accent)
-            }.frame(width: 55, height: 55).position(x: radius, y: radius)
-        }.animation(.easeIn(duration: 0.35), value: isShow).frame(maxWidth: 130, maxHeight: 110) //
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(.accent)
+            }
+            
+            // 环形按钮
+            ForEach(0..<iconArray.count, id: \.self) { i in
+                Button(action: {
+                    // 处理每个按钮的点击事件
+                    handleButtonTap(title: i)
+
+                }) {
+                    Image(systemName:iconArray[i])
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.accent)
+                }
+                .offset(self.getOffset(for: i))
+                .opacity(self.isExpanded ? 1 : 0)
+            }
+        }
+    }
+    
+    // 计算每个按钮的位置
+    private func getOffset(for index: Int) -> CGSize {
+        guard isExpanded else {
+            return .zero
+        }
+        
+        let angle = 0.8 * .pi / Double(iconArray.count) * Double(index)
+        let x = cos(angle+110) * 90
+        let y = sin(angle+110) * 90
+        
+        return CGSize(width: x, height: y)
     }
 }
 
