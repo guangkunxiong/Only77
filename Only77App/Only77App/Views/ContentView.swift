@@ -9,10 +9,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
+
     @State private var selectedTabIndex = 0
     var body: some View {
-        
         VStack(spacing: 10) {
             HStack() {
                 Button(action: {
@@ -54,7 +54,7 @@ struct ContentView: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        }
+        } .navigationBarHidden(true)
     }
     
     

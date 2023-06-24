@@ -1,4 +1,5 @@
 import Foundation
+//import SVProgressHUD
 
 class APIManager {
     
@@ -7,7 +8,7 @@ class APIManager {
     private init() {}
     
     // MARK: - Properties
-    private let baseURL = "http://localhost:5121/api/"
+    private let baseURL = "http://192.168.3.5:5121/api/"
     private let session = URLSession.shared
     private var jwtToken: String?
     
@@ -17,6 +18,8 @@ class APIManager {
     }
     
     func request<T: Codable>(endpoint: String, method: String, params: [String: Any]?, completion: @escaping (Result<T, Error>) -> Void) {
+        
+        //SVProgressHUD.show()
         // Create URL
         guard let url = URL(string: baseURL + endpoint) else {
             completion(.failure(APIError.invalidURL))
@@ -65,7 +68,8 @@ class APIManager {
                 completion(.failure(APIError.decodingError))
             }
         }
-        
+       // SVProgressHUD.dismiss()
+
         task.resume()
     }
     
@@ -73,7 +77,7 @@ class APIManager {
         
         let params = ["username": username, "password": password]
         
-        request(endpoint: "users/login", method: "POST", params: params, completion: completion)
+        request(endpoint: "Authenticate/login", method: "POST", params: params, completion: completion)
     }
     
     

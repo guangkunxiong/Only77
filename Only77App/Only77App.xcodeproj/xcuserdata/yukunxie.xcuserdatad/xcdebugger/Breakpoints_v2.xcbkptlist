@@ -3,4 +3,118 @@
    uuid = "B19E0663-CA9E-41F8-ADB4-3B14F973DC00"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EAE426F-CB48-4E6E-B5AC-CAB4C0AEB92A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Only77App/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "request(endpoint:method:params:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "79185851-AB7A-4D65-9DBA-2132BC1C7ADB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Only77App/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "request(endpoint:method:params:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "79185851-AB7A-4D65-9DBA-2132BC1C7ADB - 3b8b6d5c0712b4f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Only77App.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, method: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Only77App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yukunxie/Code/Git/Only77/Only77App/Only77App/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1720">
+               </Location>
+               <Location
+                  uuid = "79185851-AB7A-4D65-9DBA-2132BC1C7ADB - 2cfe5b750110bfde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Only77App.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, method: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Only77App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yukunxie/Code/Git/Only77/Only77App/Only77App/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "524">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E561AEC-C35E-47BE-808D-CE6DEDED3337"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Only77App/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "request(endpoint:method:params:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2E561AEC-C35E-47BE-808D-CE6DEDED3337 - 2cfe5b750110bfde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Only77App.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, method: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Only77App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yukunxie/Code/Git/Only77/Only77App/Only77App/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  uuid = "2E561AEC-C35E-47BE-808D-CE6DEDED3337 - 2cfe5b750110bfde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Only77App.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: Swift.String, method: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Only77App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yukunxie/Code/Git/Only77/Only77App/Only77App/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
