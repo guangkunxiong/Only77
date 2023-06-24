@@ -11,7 +11,7 @@ import SwiftUI
 struct Only77AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

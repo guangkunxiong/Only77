@@ -15,8 +15,8 @@ extension Color {
     static let accent2 = Color(red:240/255, green: 128/255, blue: 128/255)
     static let background = Color(red: 244/255 ,green: 151/255, blue: 142/255)
     static let tint = Color(red: 255/255, green: 202/255, blue: 212/255)
-    static let secondaryTint = Color(red: 250, green: 185, blue: 185)
-    static let text = Color(red: 251/255, green: 196/255, blue: 171/255)
-    static let vanilla = Color(red: 255, green: 218, blue: 185)
+    static let secondaryTint = Color(red: 249/255, green: 194/255, blue: 194/255)
+    static let text = Color(red: 251/255, green: 219/255, blue: 219/255)
+    static let vanilla = Color(red: 255/255, green: 218/255, blue: 185/255)
 }
 

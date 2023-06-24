@@ -9,10 +9,7 @@ import SwiftUI
 
 struct WhispersView: View {
     var body: some View{
-        
        Text("12")
-    
-            
     }
 }
 
