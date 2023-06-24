@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Only77API.Controllers;
 
-
-[ApiController]
 [Authorize]
+[ApiController]
 [Route("api/[controller]")]
 public class FileController:BaseController
 {

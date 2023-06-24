@@ -5,9 +5,8 @@ using Only77API.Model;
 
 namespace Only77API.Controllers;
 
-
-[ApiController]
 [Authorize]
+[ApiController]
 [Route("api/[controller]")]
 public class AlbumsController:BaseController
 {
