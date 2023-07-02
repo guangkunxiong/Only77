@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @State private var username: String=""
+    @State private var password: String=""
     @State private var isLoggingIn: Bool = false
     @State private var isLoggedIn = false
     
@@ -76,19 +76,18 @@ struct LoginView: View {
     
     func login() {
         isLoggingIn = true
-        APIManager.shared.login(username: username, password: password) { (result) in
-            self.isLoggingIn = false
-            
+        
+        APIManager.shared.login(username: username, password: password) { result in
             switch result {
-            case .success(let user):
-                print("登录成功")
+            case .success(let token):
                 self.isLoggedIn = true
+                isLoggedIn=true
             case .failure(let error):
                 print("登录失败: \(error)")
             }
         }
+
         
-        isLoggedIn=true
     }
 }
 

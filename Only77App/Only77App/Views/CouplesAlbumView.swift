@@ -29,6 +29,9 @@ struct CouplesAlbumView: View {
                         ImgGridView(gridItems: gridItems)
                         
                         ImgGridView(gridItems: gridItems)
+                        
+                        ImgGridView(gridItems: gridItems)
+
                     }
                     
                 }

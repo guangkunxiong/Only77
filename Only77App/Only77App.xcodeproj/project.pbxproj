@@ -14,6 +14,8 @@
 		6453A4862A3C01A40064C8C3 /* Only77AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453A4852A3C01A40064C8C3 /* Only77AppTests.swift */; };
 		6453A4902A3C01A40064C8C3 /* Only77AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453A48F2A3C01A40064C8C3 /* Only77AppUITests.swift */; };
 		6453A4922A3C01A40064C8C3 /* Only77AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453A4912A3C01A40064C8C3 /* Only77AppUITestsLaunchTests.swift */; };
+		6456BA1A2A48692B00E0AD3B /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456BA192A48692B00E0AD3B /* SliderView.swift */; };
+		6456BA1C2A48693B00E0AD3B /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6456BA1B2A48693B00E0AD3B /* SideMenuView.swift */; };
 		645EC7A32A468B250069E3F7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645EC7A22A468B250069E3F7 /* APIManager.swift */; };
 		645EC7A52A46E77E0069E3F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645EC7A42A46E77E0069E3F7 /* User.swift */; };
 		645EC7A72A46EA2D0069E3F7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645EC7A62A46EA2D0069E3F7 /* Response.swift */; };
@@ -24,6 +26,7 @@
 		646E6E9D2A3C32D200910C34 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 646E6E9C2A3C32D200910C34 /* Moya */; };
 		648C06AD2A3F3E1300FC6D5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C06AC2A3F3E1300FC6D5E /* LoginView.swift */; };
 		648C06B02A3F401800FC6D5E /* CircleMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 648C06AF2A3F401800FC6D5E /* CircleMenu */; };
+		648C9ABE2A4FB36000E3D2A8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 648C9ABD2A4FB36000E3D2A8 /* Alamofire */; };
 		6496248B2A3D3CD500C49056 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6496248A2A3D3CD500C49056 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,8 @@
 		6453A48B2A3C01A40064C8C3 /* Only77AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Only77AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6453A48F2A3C01A40064C8C3 /* Only77AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Only77AppUITests.swift; sourceTree = "<group>"; };
 		6453A4912A3C01A40064C8C3 /* Only77AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Only77AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6456BA192A48692B00E0AD3B /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		6456BA1B2A48693B00E0AD3B /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		645EC7A22A468B250069E3F7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		645EC7A42A46E77E0069E3F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		645EC7A62A46EA2D0069E3F7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648C9ABE2A4FB36000E3D2A8 /* Alamofire in Frameworks */,
 				646E6E9D2A3C32D200910C34 /* Moya in Frameworks */,
 				648C06B02A3F401800FC6D5E /* CircleMenu in Frameworks */,
 			);
@@ -103,6 +109,8 @@
 				646E6E962A3C22CE00910C34 /* PlanView.swift */,
 				646E6E982A3C22FD00910C34 /* MemorialDayView.swift */,
 				648C06AC2A3F3E1300FC6D5E /* LoginView.swift */,
+				6456BA192A48692B00E0AD3B /* SliderView.swift */,
+				6456BA1B2A48693B00E0AD3B /* SideMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			packageProductDependencies = (
 				646E6E9C2A3C32D200910C34 /* Moya */,
 				648C06AF2A3F401800FC6D5E /* CircleMenu */,
+				648C9ABD2A4FB36000E3D2A8 /* Alamofire */,
 			);
 			productName = Only77App;
 			productReference = 6453A4712A3C01A30064C8C3 /* Only77App.app */;
@@ -270,6 +279,7 @@
 			packageReferences = (
 				646E6E9B2A3C32D200910C34 /* XCRemoteSwiftPackageReference "Moya" */,
 				648C06AE2A3F401800FC6D5E /* XCRemoteSwiftPackageReference "circle-menu" */,
+				648C9ABC2A4FB36000E3D2A8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 6453A4722A3C01A30064C8C3 /* Products */;
 			projectDirPath = "";
@@ -314,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E2629929DDB82C094EAEF9E /* ContentView.swift in Sources */,
+				6456BA1A2A48692B00E0AD3B /* SliderView.swift in Sources */,
 				646E6E992A3C22FD00910C34 /* MemorialDayView.swift in Sources */,
+				6456BA1C2A48693B00E0AD3B /* SideMenuView.swift in Sources */,
 				646E6E952A3C226100910C34 /* WhispersView.swift in Sources */,
 				3E2629493A6F7B2365131BDD /* Only77AppApp.swift in Sources */,
 				646E6E932A3C21E000910C34 /* CouplesAlbumView.swift in Sources */,
@@ -668,6 +680,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		648C9ABC2A4FB36000E3D2A8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -680,6 +700,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 648C06AE2A3F401800FC6D5E /* XCRemoteSwiftPackageReference "circle-menu" */;
 			productName = CircleMenu;
+		};
+		648C9ABD2A4FB36000E3D2A8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 648C9ABC2A4FB36000E3D2A8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
